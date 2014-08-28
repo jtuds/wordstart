@@ -22,4 +22,14 @@
       echo $text;
     }
   }
+
+  // Not sure how to put this into a useful function yet but it's a useful bit of code for srcset
+  /*
+              $image = get_field('product_image');
+              $size = 'product_main';
+              $size_2x = 'product_main_2x';
+              $thumb = $image['sizes'][$size];
+              $thumb_2x = $image['sizes'][$size_2x];
+              <img srcset="<?php echo $thumb; ?> 1x, <?php echo $thumb_2x; ?> 2x" src="$thumb">
+  */
 ?>
