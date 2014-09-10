@@ -540,4 +540,9 @@ function enqueue_theme_scripts_and_styles()
 }
 add_action( 'wp_enqueue_scripts', 'enqueue_theme_scripts_and_styles' );
 
+// Helper functions
+// ---------------------------
+function dist_url() {
+  echo get_template_directory_uri() . '/dist';
+}
 ?>

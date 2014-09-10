@@ -23,13 +23,16 @@
     }
   }
 
-  // Not sure how to put this into a useful function yet but it's a useful bit of code for srcset
-  /*
-              $image = get_field('product_image');
-              $size = 'product_main';
-              $size_2x = 'product_main_2x';
-              $thumb = $image['sizes'][$size];
-              $thumb_2x = $image['sizes'][$size_2x];
-              <img srcset="<?php echo $thumb; ?> 1x, <?php echo $thumb_2x; ?> 2x" src="$thumb">
-  */
+  // Srcset helper - device pixel ratio only
+  /* Usage example: <img <?php srcset('image_id', 'image_size'); ?> class="a class"> */
+  function srcset($img_id, $img_size) {
+      $image = get_field($img_id);
+      $size = $img_size;
+      $size_2x = $img_size.'_2x';
+      $thumb = $image['sizes'][$size];
+      $thumb_2x = $image['sizes'][$size_2x];
+
+      echo 'src="'.$thumb.'" srcset="'.$thumb.' 1x, '.$thumb_2x.' 2x"';
+  }
+  
 ?>
