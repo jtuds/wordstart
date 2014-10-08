@@ -545,4 +545,18 @@ add_action( 'wp_enqueue_scripts', 'enqueue_theme_scripts_and_styles' );
 function dist_url() {
   echo get_template_directory_uri() . '/dist';
 }
+
+// Truncate words
+function truncate_words($text, $limit, $ellipsis = '&hellip;') {
+    $words = preg_split("/[\n\r\t ]+/", $text, $limit + 1, PREG_SPLIT_NO_EMPTY|PREG_SPLIT_OFFSET_CAPTURE);
+    
+    if (count($words) > $limit) {
+        end($words); //ignore last element since it contains the rest of the string
+        $last_word = preg_replace("/\.$/", "", prev($words));
+           
+        $text =  substr($text, 0, $last_word[1] + strlen($last_word[0])) . $ellipsis;
+    }
+    return $text;
+  }
+
 ?>
