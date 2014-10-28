@@ -1,0 +1,14 @@
+ /*------------------------------------*\
+    $Z-INDEX
+\*------------------------------------*/
+/**
+* Set all z-indexes here and refer to this file in the original SCSS file by simply setting the value to auto, e.g.
+* .example {
+	display:block;
+	color:red;
+	z-index:auto;
+}
+*/
+.example {
+	z-index:10;
+}

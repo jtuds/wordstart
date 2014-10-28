@@ -1,0 +1,26 @@
+/*------------------------------------*\
+    $TYPOGRAPHY
+\*------------------------------------*/
+p, li, .btn, .textwidget, td, th { 
+	font-family: $brand-face-secondary;
+}
+p, li, .btn, .textwidget, td, th, .form__label {
+	@include media-query(portable) {
+		font-size: $base-font-size - 2;
+	}
+}
+p {
+	@include hyphens(auto);
+	hyphenate-limit-lines: 2;
+	hyphenate-limit-chars: 6 3 2;
+	-webkit-hyphenate-character: "\2010";
+	hyphenate-character: "\2010";
+}
+
+footer {
+  ::-webkit-input-placeholder {
+    color: rgba(#c6b68b, .5); }
+  ::-moz-placeholder {
+    color: rgba(#c6b68b, .5); }
+  :-ms-input-placeholder {  
+    color: rgba(#c6b68b, .5); } }

@@ -1,0 +1,16 @@
+/*------------------------------------*\
+    $QUOTES
+\*------------------------------------*/
+blockquote {
+	font-style:italic;
+
+	p:last-of-type {
+		margin-bottom:$base-spacing-unit / 4;
+	}
+}
+
+cite {
+	font-style:normal;
+	font-weight:$bold;
+	font-family:$brand-face-secondary;
+}
