@@ -16,11 +16,11 @@ p {
 	-webkit-hyphenate-character: "\2010";
 	hyphenate-character: "\2010";
 
-	.p--tight {
+	&.p--tight {
 		margin-bottom:$half-spacing-unit / 2;
 	}
 
-	.p--x-tight {
+	&.p--x-tight {
 		margin-bottom:$half-spacing-unit / 4;
 	}
 }
