@@ -483,6 +483,12 @@ function mytheme_custom_type_nav_class($classes, $item) {
   return $classes;
 }
 
+// Dequeue grunion forms CSS
+function remove_grunion_style() {
+     wp_deregister_style('grunion.css');
+}
+add_action('wp_print_styles', 'remove_grunion_style');
+
 /*------------------------------------*\
     Per project variable functions
 \*------------------------------------*/
