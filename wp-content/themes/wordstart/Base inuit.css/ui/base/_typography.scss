@@ -1,13 +1,13 @@
 /*------------------------------------*\
     $TYPOGRAPHY
 \*------------------------------------*/
-p, li, .btn, .textwidget, td, th { 
-	font-family: $brand-face-secondary;
-}
-p, li, .btn, .textwidget, td, th, .form__label {
+html {
 	@include media-query(portable) {
-		font-size: $base-font-size - 2;
+		font-size:0.8em;
 	}
+}
+p, li, .btn, .textwidget, td, th { 
+	font-family: $brand-face;
 }
 p {
 	@include hyphens(auto);
@@ -17,18 +17,43 @@ p {
 	hyphenate-character: "\2010";
 
 	&.p--tight {
-		margin-bottom:$half-spacing-unit / 2;
+		margin-bottom:$base-spacing-unit / 2;
 	}
 
 	&.p--x-tight {
-		margin-bottom:$half-spacing-unit / 4;
+		margin-bottom:$base-spacing-unit / 4;
 	}
 }
 
-footer {
-  ::-webkit-input-placeholder {
-    color: rgba(#c6b68b, .5); }
-  ::-moz-placeholder {
-    color: rgba(#c6b68b, .5); }
-  :-ms-input-placeholder {  
-    color: rgba(#c6b68b, .5); } }
+.milli-size {
+	font-size:$milli-size;
+}
+.giga-size {
+	font-size:$giga-size;
+}
+.mega-size {
+	font-size:$mega-size;
+}
+.kilo-size {
+	font-size:$kilo-size;
+}
+
+// These are mainly for links because the heading class colours override the link class colours
+.h1-size {
+	font-size:$h1-size;
+}
+.h2-size {
+	font-size:$h2-size;
+}
+.h3-size {
+	font-size:$h3-size;
+}
+.h4-size {
+	font-size:$h4-size;
+}
+.h5-size {
+	font-size:$h5-size;
+}
+.h6-size {
+	font-size:$h6-size;
+}

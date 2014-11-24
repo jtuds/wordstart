@@ -1,13 +1,38 @@
 /*------------------------------------*\
     $LAYOUT
 \*------------------------------------*/
+
+/**
+* Set our main wrapper to a percentage width and set any child wrappers to auto width with some padding so they are consistent with each other
+*/
 .wrapper {
 	max-width:$site-max-width;
 	width:$site-width;
 	margin-right:auto;
 	margin-left:auto;
 	position:relative;
+	height:100%;
 
+	.wrapper {
+		width:auto;
+		padding-left:$base-spacing-unit;
+		padding-right:$base-spacing-unit;
+	}
+
+	.wrapper--stretch {
+		width:100%;
+	}
+  
+  // May need a better name
+	.wrapper--double {
+  	padding-left: $base-spacing-unit * 2;
+  	padding-right: $base-spacing-unit * 2;
+  }
+  
+  .wrapper--double-left {
+    padding-left: $base-spacing-unit * 2;
+  }
+  
 	@include media-query(portable) {
 		width:$site-width - 5;
 	}
@@ -15,6 +40,9 @@
 
 .wrapper--thin {
 	max-width:$site-narrow-width;
+}
+.wrapper--x-thin {
+	max-width:$site-x-narrow-width;
 }
 .wrapper--flush-right {
 	margin-right:0;

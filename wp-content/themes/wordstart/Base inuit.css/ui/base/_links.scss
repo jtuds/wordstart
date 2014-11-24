@@ -6,9 +6,7 @@ a {
 	text-decoration:none;
 	transition: .2s $brand-cubic-bezier;
 
-  &:hover, &:focus {
-    text-decoration:underline;
-  } 
+  &:hover, &:focus {}
 }
 
 a.not-default-link {
@@ -17,14 +15,24 @@ a.not-default-link {
 
 
 [data-href] {
-  p, h1 {
+  p, #{$heading-selectors}, a {
     transition: .2s $brand-cubic-bezier;
   }
   
   &:hover,
   &:focus {
-    p, h1 {
-      opacity: .6;
+    p, #{$heading-selectors}, a {
+      opacity: .8;
+    }
+  }
+}
+
+// need a better way of overriding it
+.feature-box[data-href] {
+  &:hover,
+  &:focus {
+    p, #{$heading-selectors}, a {
+      opacity: 1;
     }
   }
 }
