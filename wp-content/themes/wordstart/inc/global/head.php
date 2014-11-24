@@ -11,7 +11,10 @@
 <meta name="description" content="<?php bloginfo('description'); ?>">
 
 <!-- IE stuff -->
-<!--[if lt IE 9]><link rel="stylesheet" href="<?php echo getThemePath(); ?>/dist/css/ie.css"><![endif]-->
+<!--[if lt IE 9]>
+<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+<link rel="stylesheet" href="<?php echo getThemePath(); ?>/dist/css/ie.css">
+<![endif]-->
 
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <link rel="shortcut icon" href="<?php echo getBasePath(); ?>/favicon.ico" rel="shortcut icon">

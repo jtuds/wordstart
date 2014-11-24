@@ -496,7 +496,7 @@ add_action('wp_print_styles', 'remove_grunion_style');
 // Set URL paths
 
 function getThemePath() {
-    $url = site_url('/wp-content/themes/themename');
+    $url = get_template_directory_uri();
     echo $url;
 }
 
@@ -507,7 +507,7 @@ function getBasePath() {
 
 function getImagePath($return = false)
 {
-  $url = site_url('/wp-content/themes/tekallica/dist/images');
+  $url = get_template_directory_uri() . '/dist/images';
   if ($return === true) return $url;
   else echo $url;
 }
@@ -533,7 +533,7 @@ add_action( 'wp_enqueue_scripts', 'register_jquery' );
 function enqueue_theme_scripts_and_styles() 
 {
     wp_enqueue_style( 'global', get_template_directory_uri() . '/dist/css/style.css', null, '', '' );
-    wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/dist/js/lib/modernizr-2.8.2.js', null, '2.8.2' );
+    wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/dist/js/modernizr.js', null, '', true );
 
     // Enqueue page specific scripts and styles
 
@@ -542,7 +542,7 @@ function enqueue_theme_scripts_and_styles()
     }
 
     // Load our scripts file last so we can manipulate any plugins from here
-    wp_enqueue_script( 'scripts', get_template_directory_uri() . '/dist/js/scripts.js', null, '', true );
+    wp_enqueue_script( 'scripts', get_template_directory_uri() . '/dist/js/global.js', null, '', true );
 }
 add_action( 'wp_enqueue_scripts', 'enqueue_theme_scripts_and_styles' );
 
